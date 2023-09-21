@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/static/index.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="/static/index.js"></script>
+    <title>Miner</title>
+</head>
+
+<body style="background-color: #121212; color: #DDDDDD;font-family: montserrat,sans-serif;"
+    onload="formF();x();receiveLog();running()">
+    <header class="header_prof">
+        <div id="logo_d"><img src="/static/key.png"></div>
+        <div id="main">
+            <p>Oxerator</p>
+        </div>
+        <div id="logout"><a href="{{url_for('logout')}}"><button title="Log out" id="logout_button"
+                    type="submit"></button></a></div>
+    </header>
+    <div id="div2">
+        <table class="notm">
+            <tr>
+                <th colspan="2">Config</th>
+            </tr>
+            <tr>
+                <td id="tokens_add_1">Tokens add <span style="color:red;" id="s_t"></span></td>
+                <td title="upload" id="tokens_upload_1">
+                    <input class="upload_f" id="UploadToken" type="file" name="Upload Tokens" accept=".txt">
+                    <label id="fle" for="UploadToken">Upload Tokens</label>
+                </td>
+            </tr>
+            <tr>
+                <td>Channels <span style="color:red;" id="s_c"></span></td>
+                <td id="tokens_upload_2">
+                    <input type="file" id="UploadChannel" class="upload_f" accept=".txt" name="Upload channel list">
+                    <label id="fle" for="UploadChannel">Upload Channel ID List</label>
+                </td>
+            </tr>
+            <tr>
+                <td>Command list (in <span style="color:indianred;"
+                        title="Chronological order is listing, describing, or discussing when events happened as they relate to time">chronological
+                        order</span>) <span style="color:red;" id="s_f"></span>
+                </td>
+                <td id="upload_commands_list">
+                    <input type="file" id="UploadCommands" class="upload_f" name="Command List" accept=".txt">
+                    <label id="fle" for="UploadCommands">Upload Commands List</label>
+                </td>
+            </tr>
+
+        </table>
+        <form autocomplete="off" id="form_data" oninput="formValidate();">
+            <table>
+                <tr>
+                    <th colspan="2">Authorization</th>
+                </tr>
+                <tr>
+                    <td>Miners to start</td>
+                    <td><input type="number" id="minernos" placeholder="5" value="" maxlength="2"></td>
+                </tr>
+                <tr>
+                    <td>Captcha key</td>
+                    <td id="tokens_upload_3">
+                        <input type="text" name="captcha_key" id="cap_key"
+                            placeholder="730bc5c14dd7bd2a4dfd22e72067dc47" value="" maxlength="40">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td title="[Owners](/) User ID separated by ','">Owners (separated by "," comma) </td>
+                    <td><input type="text" name="owners" id="owners" placeholder="12345678,87654321" value=""
+                            maxlength="200"></td>
+                </tr>
+            </table>
+            <table>
+                <tr>
+                    <th colspan="2">General</th>
+                </tr>
+                <tr>
+                    <td>Server ID</td>
+                    <td><input type="text" name="server_id" id="server_id" placeholder="508495035613071040" value=""
+                            maxlength="20"></td>
+                </tr>
+                <tr>
+                    <td>Solver Role ID</td>
+                    <td><input type="text" name="server_role_id" id="server_role_id" placeholder="1071499536628981810"
+                            value="" maxlength="20"></td>
+                </tr>
+                <tr>
+                    <td>Log channel ID</td>
+                    <td><input type="text" name="log_channel_id" id="log_channel_id" placeholder="1071499536628981810"
+                            value="" maxlength="20"></td>
+                </tr>
+                <tr>
+                    <td>Unlock Commands Channel ID</td>
+                    <td><input type="text" name="unci" id="unci" maxlength="20" placeholder="1071499536628981810"
+                            value="">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Manual Captcha Solving Channel ID</td>
+                    <td><input type="text" maxlength="20" name="mcsci" id="mcsci" placeholder="1071499536628981810"
+                            value=""></td>
+                </tr>
+                <tr>
+                    <td>Delay start and end <p id="stdetd"></p>
+                    </td>
+                    <td>
+                        <input type="number" maxlength="2" min="0" max="99" name="start_delay" id="start_delay" value=""
+                            placeholder="6"><br />
+                        <input name="end_delay" min="0" max="99" maxlength="2" id="end_delay" value="" type="number"
+                            placeholder="12">
+                    </td>
+                </tr>
+            </table>
+            <table>
+                <tr>
+                    <th colspan="2">Commands Configuration</td>
+                </tr>
+
+                <tr>
+                    <td>Start Command (for each)</td>
+                    <td><input name="startoxyminers" maxlength="15" type="text" id="startoxyminers" value=""
+                            placeholder="!startoxyminers">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Stop Command (for each)</td>
+                    <td><input name="stopoxyminers" maxlength="15" type="text" id="stopoxyminers" value=""
+                            placeholder="!stopoxyminers">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Start Command (for specific)</td>
+                    <td><input type="text" maxlength="15" name="start_each" id="start_each" value=""
+                            placeholder="!startminer {minerno}">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Stop Command (for specific)</td>
+                    <td><input type="text" maxlength="15" name="stop_each" id="stop_each" value=""
+                            placeholder="!stopminer {minerno}"></td>
+                </tr>
+                <tr>
+                    <td>DM UwU prefix</td>
+                    <td><input type="text" maxlength="10" name="dm_uwu" id="dm_uwu" value="" placeholder=">dmowo"></td>
+                </tr>
+                <tr>
+                    <td>Invoke Command</td>
+                    <td><input type="text" maxlength="10" name="invoke_cmd" id="invoke_cmd" value=""
+                            placeholder=">invoke">
+                    </td>
+                </tr>
+
+            </table>
+        </form>
+    </div>
+    <div id="div1">
+        <textarea id="terminal_hello" autocorrect="off" disabled spellcheck="false" tabindex="0">{{x}}</textarea>
+    </div>
+    <div id="btns">
+        <button id="save" onclick="postValue()">SAVE</button>
+        <button id="start" onclick="submitV()" disabled>START</button>
+        <button id="stop" onclick="stopV()">KILL</button>
+    </div>
+
+</body>
+
+</html>
