@@ -1,4 +1,4 @@
-# This repository is now in an inactive state and no longer receives updates or maintenance. Please be aware that the provided code is not functional. It is intended solely for educational and learning purposes, and any attempt to use it in a production environment is discouraged. We recommend using this repository as a resource for understanding programming concepts and practices rather than as a tool for practical applications. For the latest and actively maintained solutions, please explore other repositories and resources within the community.
+ This repository is now in an inactive state and no longer receives updates or maintenance. Please be aware that the provided code is not functional. It is intended solely for educational and learning purposes, and any attempt to use it in a production environment is discouraged. We recommend using this repository as a resource for understanding programming concepts and practices rather than as a tool for practical applications. For the latest and actively maintained solutions, please explore other repositories and resources within the community.
 
 
 
