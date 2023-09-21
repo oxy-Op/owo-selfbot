@@ -24,7 +24,7 @@ Oxerator runs on your local system, utilizing your system's resources. It acts a
 
 ## Usage
 
-1. `git clone` repo
+1. `git clone https://github.com/oxy-Op/owo-selfbot.git`
 2. `cd owo-selfbot`
 3. `pip install -r requirements.txt`
 4. `python app.py`
