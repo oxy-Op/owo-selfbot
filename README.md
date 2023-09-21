@@ -1,6 +1,6 @@
 # Oxerator - Discord Owo Bot Automation Tool
 
-
+![Oxerator Logo](path-to-your-logo.png)
 
 **Oxerator** is a powerful automation tool designed to streamline your interactions with the Discord Owo Bot. It enables you to automate commands and mine items offered by Owo Bot, all with the goal of making your Discord experience more efficient.
 
@@ -36,14 +36,43 @@ Oxerator runs on your local system, utilizing your system's resources. It acts a
 
 When you reach the miner webpage, you'll find several categories for configuration:
 
-- **Config**: Configure accounts, channels, and commands.
-- **Authorization**: Configure authorization options.
-- **General**: Configure general information.
-- **Commands Configuration**: Set up in-built commands.
+### Config
+Configures Accounts, Channels, and Commands. Contains the following options:
+
+- **Tokens**: Token Authorization of Discord accounts in a text file.
+- **Channels**: Requires Discord Server Channel IDs.
+- **Commands**: Owo Bot Commands.
+
+### Authorization
+Configures options relating to authorization. Contains the following options:
+
+- **Miners to Start**: Type a number to specify how many miners you want to start (0 for 1 and so on, maximum 99).
+- **Captcha Key**: Captcha API key provided by your vendor.
+- **Owners**: Discord User IDs of owners. Owners have full access to miner commands.
+
+### General
+Configures General Information. Contains the following options:
+
+- **Server ID**: Server ID of the mining server.
+- **Solver Role ID**: Role ID of the solvers who manually solve captchas.
+- **Log Channel ID**: Channel ID for sending logs.
+- **Unlock Commands Channel ID**: Channel ID for sending unlock commands.
+- **Manual Captcha Solving Channel ID**: Channel ID for users with solver roles to send commands for manual captcha solving.
+- **Delay**: Define the delay range between sending messages.
+
+### Commands Configuration
+Configures In-Built Commands Information. Contains the following options:
+
+- **Start command**: Define the in-built start command.
+- **Stop command**: Define the in-built stop command.
+- **Start command for single miner**: Define the in-built start command for a single miner.
+- **Stop command for single miner**: Define the in-built stop command for a single miner.
+- **Owo DM Command**: Define the in-built command to Direct Message OwO Bot.
+- **Invoke Command**: Define the in-built command to use custom commands.
 
 ## Disclaimer
 
-Please use Oxerator responsibly and in compliance with Discord's Terms of Service. Respect Discord's rules and guidelines when automating actions with this tool.
+Please use Oxerator responsibly and in compliance with Discord's Terms of Service. Respect Discord's rules and guidelines when automating actions with this tool. Note that automating Owo Bot is against Discord's Terms of Service, and Oxerator is intended for educational purposes only.
 
 ## Precautions
 
