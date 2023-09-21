@@ -2,7 +2,6 @@ from requests import get
 from json import load, dump
 from .utils import exit_
 
-access_token = "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"
 
 
 def fetch_data():
