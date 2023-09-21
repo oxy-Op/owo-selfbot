@@ -1,6 +1,5 @@
 # Oxerator - Discord Owo Bot Automation Tool
 
-![Oxerator Logo](path-to-your-logo.png)
 
 **Oxerator** is a powerful automation tool designed to streamline your interactions with the Discord Owo Bot. It enables you to automate commands and mine items offered by Owo Bot, all with the goal of making your Discord experience more efficient.
 
@@ -23,13 +22,13 @@ Oxerator acts as a mediator between your Discord server and the Owo Bot. It comm
 
 Oxerator runs on your local system, utilizing your system's resources. It acts as a bridge between the server and the web interface.
 
-## How to Use Oxerator
+## Usage
 
-1. Download the latest version of Oxerator (currently supports Windows OS).
-2. After installation, execute the application. It will configure basic files on the first run.
-3. Upon configuration completion, restart the application.
-4. After restarting, ensure you have an internet connection, and the app will connect to the server.
-5. Open your browser and navigate to `http://127.0.0.1:5000`. You will be prompted for an API key (contact us to purchase one).
+1. `git clone` repo
+2. `cd owo-selfbot`
+3. `pip install -r requirements.txt`
+4. `python app.py`
+5. Open your browser and navigate to `http://127.0.0.1:5000`. You will be prompted for an API key (which is `oxy-Op`)
 6. After logging in, you'll land on the miner webpage, where you can configure your miners.
 
 ## Configuring Oxerator
